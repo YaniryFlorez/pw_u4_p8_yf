@@ -19,13 +19,15 @@ export default {
   },
   methods: {
     login(){
-        if (this.username === "admin" && this.password === "123") {
-            localStorage.setItem("usario", "admin");
+        if (
+          (this.username === "admin" || this.username === "estudiante")
+           && this.password === "123") {
+            localStorage.setItem("usuario", this.username);
             localStorage.setItem("auth", "true");     
             // Redireccionar a la página de Bienvenida 
             this.$router.push("/home")                   
         }
-    }
+    },
   },
 };
 </script>
