@@ -7,6 +7,13 @@ const guardar = async (body) => {
     const data = axios.post(`${URL}`, body).then(resp => resp.data);
     console.log("guardar", data);
 }
+//buscar todos
+// public List<EstudianteTo> buscarTodos()
+const buscarTodos = async () => {
+    const data = await axios.get(`${URL}`).then(resp => resp.data);
+    return data;
+}
+
 //actualiza
 // public void actualizar(@RequestBody EstudianteTo estudianteTo)
 const actualizar = async (body,id) => {    
@@ -30,6 +37,9 @@ const borrar = async (id) => {
 //Fachada
 export const guardarFachada = async (body) => {
     await guardar(body);
+}
+export const BucarTodosFachada = async()=>{
+    await buscarTodos();
 }
 export const actualizarFachada = async (body, id) => {
     await actualizar(body, id);

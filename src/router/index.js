@@ -1,12 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Estudianteview from '@/views/EstudianteView.vue'
+import EstudianteGuaradar from '@/components/EstudianteGuardar.vue'
 import LoginView from "@/views/LoginView.vue"
 import NotasIngresoView from '@/views/NotasIngresoView.vue'
 import AboutView from '@/views/AboutView.vue'
 import RecursoProhibidoView from '@/views/RecursoProhibidoView.vue'
 
 import {obtenerPaginasPermitidas} from '../helpers/Autorizacion'
+import EstudianteActualizar from '@/components/EstudianteActualizar.vue'
+import EstudianteActualizarParcial from '@/components/EstudianteActualizarParcial.vue'
 
 function estaAutenticado() {
 
@@ -47,14 +49,24 @@ const routes = [
     }
   },
   {
-    path: '/Estudiante',
-    name: 'Estudiante',
-    component: Estudianteview,
-    meta: {
-      requireAuth: true,
-      esValida: false,
-    }
+    path: '/estudiante/guardar',
+    name: '/estudiante/guardar',
+    component: EstudianteGuaradar,
+
   },
+  {
+    path: '/estudiante/actualizar',
+    name: '/estudiante/actualizar',
+    component: EstudianteActualizar,
+   
+  },
+   {
+    path: '/estudiante/parcial',
+    name: '/estudiante/parcial',
+    component: EstudianteActualizarParcial,
+   
+  },
+
     {
     path: '/403',
     name: '403',

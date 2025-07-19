@@ -1,9 +1,13 @@
 <template>
-   <!-- <nav>
-   <router-link to="/">Home</router-link> |
-    <router-link to="/estudiante">Estudiantes</router-link> |
+   <nav>
     <router-link to="/login">Login</router-link>
-  </nav>-->
+   <router-link to="/">Home</router-link> |
+    <router-link to="/estudiante/guardar">Guardar</router-link> |
+    <router-link to="/estudiante/parcial">Parcial</router-link> |
+    <router-link to="/estudiante/actualizar">Actualizar</router-link> |
+
+   
+  </nav>
   <router-view/>
 </template>
 

@@ -3,7 +3,7 @@
     <div class="login-caja">
       <h2>Iniciar Sesion</h2>
       <input v-model="username" type="text" placeholder="Usuario" />
-      <input v-model="password" type="text" placeholder="Contraseña" />
+      <input v-model="password" type="password" placeholder="Contraseña" />
       <button @click="login()">Ingresar</button>
     </div>
   </div>
